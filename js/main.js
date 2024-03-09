@@ -92,6 +92,15 @@ function Validar(){
     }else{
         valCampos = valCampos + " ";
     }
+
+    var compare=/^[0-9]+$/;
+    if(vs_DNI.match(compare)){
+        valCampos = valCampos + " ";
+    } else {
+        valCampos = valCampos + " Ingrese números en DNI.";
+    }
+
+
     return valCampos;
 }
 
