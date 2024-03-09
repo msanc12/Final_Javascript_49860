@@ -135,7 +135,6 @@ function ListarBaseDatosImperio_Personas()
         {
             contenido += `<div class="col">
             <div class="card h-100">
-            <i class="bi bi-file-earmark-lock2"></i>
             <div class="card-body">
                 <h5 class="card-title">${post.name}</h5>
                 <p class="card-text text-start">
