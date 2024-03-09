@@ -116,3 +116,47 @@ function Ini()
 }
 
 document.getElementById("btn_RegistrarValidar").onclick = Ini;
+
+function ListarBaseDatosImperio_Personas()
+{
+    /*
+    fetch('https://swapi.py4e.com/api/people/')
+    .then(respuesta => respuesta.json())
+    .then(data => {
+        console.log(data.results);
+    })
+    */
+    
+    fetch('https://swapi.py4e.com/api/people/')
+    .then(respuesta => respuesta.json())
+    .then(data => {
+        let contenido = "";
+        for (const post of data.results)
+        {
+            contenido += `<div class="col">
+            <div class="card h-100">
+            <i class="bi bi-file-earmark-lock2"></i>
+            <div class="card-body">
+                <h5 class="card-title">${post.name}</h5>
+                <p class="card-text text-start">
+                <br>
+                Año nacimiento: ${post.birth_year}<br> 		
+                Color ojos: ${post.eye_color}<br>
+                Género: ${post.gender}<br>
+                Color Cabello: ${post.hair_color}<br>
+                Altura: ${post.height}<br>
+                Masa: ${post.mass}<br>
+                Color Piel:${post.skin_color}<br>
+                </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-body-secondary">Última actualización: ${post.edited}</small>
+            </div>
+            </div>
+            </div>`;
+        }
+        document.getElementById("resultadoBDImperio").innerHTML = contenido;
+    })
+}
+
+ListarBaseDatosImperio_Personas();
